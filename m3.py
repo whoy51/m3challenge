@@ -21,7 +21,7 @@ def predict(_data: list, _average: float, _start: int, _years: int) -> list:
     data = [_data[_start]]
 
     for i in range(_years):
-        data.append(data[0] * (_average ** i + 1 + _start))
+        data.append((data[0] * (_average ** i + 1 + _start))*1000)
     return data
 
 
