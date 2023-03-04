@@ -8,8 +8,8 @@ def roc(_data: list) -> list:
     return rates
 
 # Calculates the average rate of change for a list of rates _data and returns it
-def average_roc(_data: list, _len: int) -> float:
-    average = 0
+def avg_roc(_data: list, _len: int) -> float:
+    average = 0.0
     for value in _data:
         average += value
     average /= _len
