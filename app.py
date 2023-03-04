@@ -21,7 +21,7 @@ def index():
     print(str(data.us_prediction))
     jobj = {'data': data.us_prediction}
     print(jobj)
-    return render_template('index.html', data=json.dumps([ob.__dict__ for ob in data.us_prediction]))
+    return render_template('index.html', data=json.dumps(jobj))
 
 
 if __name__ == '__main__':

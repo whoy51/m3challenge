@@ -11,16 +11,17 @@
 
 	<script>
 		// get the canvas element
-		var list = JSON.parse('{{ list | safe }}')
+		var list = JSON.parse('{{ data | safe }}')
+		console.log(list.data)
 		var ctx = document.getElementById("myChart").getContext("2d");
 
 		// create the chart
 		var myChart = new Chart(ctx, {
 			type: 'line',
 			data: {
-				labels: ["January", "February", "March", "April", "May", "June", "July"],
+				labels: ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032"],
 				datasets: [{
-					label: 'My First Dataset',
+					label: 'E-bike Sales Over Time',
 					data: list.data,
 					// data: [12, 19, 3, 5, 2, 3, 10],
 					fill: false,

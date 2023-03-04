@@ -17,10 +17,10 @@ def avg_roc(_data: list) -> float:
     return average
 
 
-def predict(_data: list, _average: float):
+def predict(_data: list, _average: float, _years: int):
     # print("we do something")
     data = [_data[0]]
 
-    for i in range(10):
+    for i in range(_years):
         data.append(data[0] * (_average ** i))
     return data
