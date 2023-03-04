@@ -29,8 +29,5 @@ compile_commands.*.json
 *.fdb_latexmk
 *.*.gz
 
-*.pdf
-.pdf
-
 # osx
 .DS_Store
