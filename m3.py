@@ -22,5 +22,5 @@ def predict(_data: list, _average: float, _years: int):
     data = [_data[0]]
 
     for i in range(_years):
-        data.append(data[0] * (_average ** i))
+        data.append(data[0] * (_average ** i+1))
     return data

@@ -6,28 +6,34 @@
 </head>
 <body>
 	<div>
-		<canvas id="myChart"></canvas>
+		<canvas id="us"></canvas>
 	</div>
 
 	<script>
 		// get the canvas element
-		var list = JSON.parse('{{ data | safe }}')
-		console.log(list.data)
-		var ctx = document.getElementById("myChart").getContext("2d");
+		var uslist = JSON.parse('{{ usjs | safe }}')
+		var uklist = JSON.parse('{{ ukjs | safe }}')
+		var us = document.getElementById("us").getContext("2d");
 
 		// create the chart
-		var myChart = new Chart(ctx, {
+		var usChart = new Chart(us, {
 			type: 'line',
 			data: {
 				labels: ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032"],
 				datasets: [{
-					label: 'E-bike Sales Over Time',
-					data: list.data,
-					// data: [12, 19, 3, 5, 2, 3, 10],
+					label: 'US E-bike Sales Over Time',
+					data: uslist.data,
 					fill: false,
-					borderColor: 'rgb(75, 192, 192)',
+					borderColor: 'rgb(239,7,60)',
 					lineTension: 0.1
-				}]
+				},{
+					label: 'UK E-bike Sales Over Time',
+					data: uklist.data,
+					fill: false,
+					borderColor: 'rgb(158,29,201)',
+					lineTension: 0.1
+				}
+				]
 			},
 			options: {
 				scales: {

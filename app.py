@@ -18,10 +18,9 @@ def index():
     print("UK prediction: " + str(data.uk_prediction))
     print("UK Average rate of change (in 1000s): " + str(data.uk_average))
 
-    print(str(data.us_prediction))
-    jobj = {'data': data.us_prediction}
-    print(jobj)
-    return render_template('index.html', data=json.dumps(jobj))
+    usjs = {'data': data.us_prediction}
+    ukjs = {'data': data.uk_prediction}
+    return render_template('index.html', usjs=json.dumps(usjs), ukjs=json.dumps(ukjs))
 
 
 if __name__ == '__main__':
