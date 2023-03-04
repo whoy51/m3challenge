@@ -11,7 +11,7 @@
 
 	<script>
 		// get the canvas element
-		// var list = {{ data | safe }};
+		var list = JSON.parse('{{ list | safe }}')
 		var ctx = document.getElementById("myChart").getContext("2d");
 
 		// create the chart
@@ -21,8 +21,8 @@
 				labels: ["January", "February", "March", "April", "May", "June", "July"],
 				datasets: [{
 					label: 'My First Dataset',
-					// data: list,
-					data: [12, 19, 3, 5, 2, 3, 10],
+					data: list.data,
+					// data: [12, 19, 3, 5, 2, 3, 10],
 					fill: false,
 					borderColor: 'rgb(75, 192, 192)',
 					lineTension: 0.1
