@@ -20,7 +20,10 @@ def index():
 
     usjs = {'data': data.us_prediction}
     ukjs = {'data': data.uk_prediction}
-    return render_template('index.html', usjs=json.dumps(usjs), ukjs=json.dumps(ukjs))
+    usscaled = {'data': data.us_scaled}
+    ukscaled = {'data': data.uk_scaled}
+    return render_template('index.html', usjs=json.dumps(usjs), ukjs=json.dumps(ukjs),
+                           usscaled=json.dumps(usscaled), ukscaled=json.dumps(ukscaled))
 
 
 if __name__ == '__main__':

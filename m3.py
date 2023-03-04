@@ -17,10 +17,18 @@ def avg_roc(_data: list) -> float:
     return average
 
 
-def predict(_data: list, _average: float, _years: int):
+def predict(_data: list, _average: float, _start: int, _years: int) -> list:
     # print("we do something")
-    data = [_data[0]]
+    data = [_data[_start]]
 
     for i in range(_years):
-        data.append(data[0] * (_average ** i+1))
+        data.append(data[0] * (_average ** i + 1 + _start))
+    return data
+
+
+# change populations to be percentages based of population of country
+def scale(_data: list, _population: int) -> list:
+    data = []
+    for i in range(len(_data)):
+        data.append(((_data[i] * 1000) / _population) * 100)
     return data

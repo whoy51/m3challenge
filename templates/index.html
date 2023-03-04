@@ -6,29 +6,64 @@
 </head>
 <body>
 	<div>
-		<canvas id="us"></canvas>
+		<h4>Our data!</h4>
+		<canvas id="sales"></canvas>
+		<br>
+		<canvas id="percentage"></canvas>
 	</div>
 
 	<script>
 		// get the canvas element
 		var uslist = JSON.parse('{{ usjs | safe }}')
 		var uklist = JSON.parse('{{ ukjs | safe }}')
-		var us = document.getElementById("us").getContext("2d");
+		var usscaled = JSON.parse('{{ usscaled | safe }}')
+		var ukscaled = JSON.parse('{{ ukscaled | safe }}')
+		var sales = document.getElementById("sales").getContext("2d");
+		var percentage = document.getElementById("percentage").getContext("2d");
 
 		// create the chart
-		var usChart = new Chart(us, {
+		var usChart = new Chart(sales, {
 			type: 'line',
 			data: {
 				labels: ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032"],
 				datasets: [{
-					label: 'US E-bike Sales Over Time',
+					label: 'US E-bike Sales (1000s)',
 					data: uslist.data,
 					fill: false,
 					borderColor: 'rgb(239,7,60)',
 					lineTension: 0.1
 				},{
-					label: 'UK E-bike Sales Over Time',
+					label: 'UK E-bike Sales Over Time (1000s)',
 					data: uklist.data,
+					fill: false,
+					borderColor: 'rgb(158,29,201)',
+					lineTension: 0.1
+				}
+				]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+		var percentageChart = new Chart(percentage, {
+			type: 'line',
+			data: {
+				labels: ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032"],
+				datasets: [{
+					label: 'US % of population',
+					data: usscaled.data,
+					fill: false,
+					borderColor: 'rgb(239,7,60)',
+					lineTension: 0.1
+				},{
+					label: 'UK % of population',
+					data: ukscaled.data,
 					fill: false,
 					borderColor: 'rgb(158,29,201)',
 					lineTension: 0.1
