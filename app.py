@@ -1,11 +1,6 @@
-#!/usr/bin/python3
-
-
 from flask import Flask, render_template
 import json
-
 import data
-
 
 app = Flask(__name__)
 
