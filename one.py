@@ -37,3 +37,13 @@ for x in uk_rateOfChange:
 uk_average = uk_average / (len(uk_data) - 1)
 
 print("UK Average rate of change (in 1000s): " + str(us_average))
+
+
+def us_predict():
+    print("we do something")
+    data = [us_data[0]]
+
+    for i in range(10):
+        data.append(data[0] * (us_average ** i))
+
+    return data
