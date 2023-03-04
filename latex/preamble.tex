@@ -13,14 +13,16 @@
 
 % header/footer style
 \fancypagestyle{style}{%
-  \fancyhf{}
-  \fancyhead[LE,RO]{\slshape \rightmark}
-  \fancyhead[LO,RE]{\slshape \leftmark}
-  \fancyhead[L]{Team \#16656}
-  \fancyhead[R]{\thepage}
-  \fancyfoot[C]{--- Draft ---} % TODO: remove before final submission
-  \renewcommand{\headrulewidth}{0.4pt}% Line at the header visible
-  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+    \fancyhf{}
+    \fancyhead[L, R]{\slshape \rightmark}
+    \fancyhead[L, R]{\slshape \leftmark}
+    \fancyhead[L]{Team \#16656}
+    \fancyhead[R]{\thepage}
+    \fancyfoot[C]{--- Draft ---} % TODO: remove before final submission
+    \renewcommand{\headrulewidth}{0.4pt}% Line at the header visible
+    \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
 }
 
+
+\setlength{\headheight}{14.49998pt}
 \pagestyle{style}
