@@ -1,0 +1,33 @@
+# vscode
+.vscode/
+*.code-workspace
+
+# n/vim
+*.vim
+
+# bear
+.cache/
+compile_commands.json
+compile_commands.*.json
+
+# latex
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.dvi
+*.xdv
+*-converted-to.*
+*.fdb_latexmk
+*.*.gz
+
+# osx
+.DS_Store
