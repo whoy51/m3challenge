@@ -7,18 +7,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    print("US prediction: " + str(data.us_prediction))
-    print("US Average rate of change (in 1000s): " + str(data.us_average))
-    print("")
-    print("UK prediction: " + str(data.uk_prediction))
-    print("UK Average rate of change (in 1000s): " + str(data.uk_average))
-
     usjs = {'data': data.us_prediction}
     ukjs = {'data': data.uk_prediction}
     usscaled = {'data': data.us_scaled}
     ukscaled = {'data': data.uk_scaled}
     return render_template('index.html', usjs=json.dumps(usjs), ukjs=json.dumps(ukjs),
-                           usscaled=json.dumps(usscaled), ukscaled=json.dumps(ukscaled))
+                           usscaled=json.dumps(usscaled), ukscaled=json.dumps(ukscaled),
+                           us_rate=data.us_average, uk_rate=data.uk_average)
 
 
 if __name__ == '__main__':

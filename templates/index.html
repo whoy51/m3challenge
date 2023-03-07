@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chart.js Example</title>
+	<title>Charts</title>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 	<div>
-		<h4>Our data!</h4>
+		<h1 style="text-align: center">Visualizations of Data</h1>
 		<canvas id="sales"></canvas>
 		<br>
 		<canvas id="percentage"></canvas>
+		<br>
+		<p>US average rate of change (in 1000s): {{ us_rate }}</p>
+		<p>UK average rate of change (in 1000s): {{ uk_rate }}</p>
 	</div>
 
 	<script>
